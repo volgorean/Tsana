@@ -14,14 +14,17 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(current_user.id)
   end
 
   def update
-    user.update(user_info)
+    @user = User.find(current_user.id)
+    @user.update(user_info)
+    redirect_to :back
   end
 
 private
   def user_info
-    params.require(:user).permit(:username, :email, :password, :password_confirmation);
+    params.require(:user).permit(:username, :email, :password, :password_confirmation, :avatar);
   end
 end

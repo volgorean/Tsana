@@ -1,0 +1,10 @@
+<a href="/"><button>Home</button></a>
+<%= form_for @user do |f| %>
+    <%= f.text_field :email %>
+    <%= f.submit "Update Email" %>
+<% end %>
+
+<%= form_for @user do |f| %>
+    <%= f.file_field :avatar %>
+    <%= f.submit "Upload" %>
+<% end %>
