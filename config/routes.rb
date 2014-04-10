@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :sessions
   resources :users
   resources :projects
+
+  match("/projects/:id/join", {via: :get, to:"joins#create"})
 end

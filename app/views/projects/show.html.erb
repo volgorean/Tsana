@@ -6,3 +6,7 @@
     <li><%= member.username %></li>
   <% end %>
 </ul>
+
+<a href="/projects/<%= @project.id %>/join">
+  <button>Join <%= @project.name %></button>
+</a>
