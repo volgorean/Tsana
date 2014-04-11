@@ -1,3 +1,5 @@
+<%= render "partials/nav" %>
+
 <h1><%= @project.name %></h1>
 <h3><%= @project.mission %></h3>
 <p><%= @project.description %></p>
@@ -7,6 +9,8 @@
   <% end %>
 </ul>
 
-<a href="/projects/<%= @project.id %>/join">
-  <button>Join <%= @project.name %></button>
-</a>
+<% if !@project.users.include?(current_user) %>
+  <a href="/projects/<%= @project.id %>/join">
+    <button>Join <%= @project.name %></button>
+  </a>
+<% end %>
