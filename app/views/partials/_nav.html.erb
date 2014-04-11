@@ -1,6 +1,25 @@
-<div class="navbar">
-  <div class="nav">
-    <span class="nav-left"><a href="/">Tsana</a></span>
-    <span class="nav-right"><a href="/users/<%= current_user.id %>"><%= current_user.username %></a></span>
-  </div>
-</div>
+
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name fiftypx-leftright">
+      <h1><a href="/">tsana</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="/"><%= current_user.username %></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right fiftypx-leftright">
+      <li class="has-dropdown">
+        <a href="/"><%= current_user.username %></a>
+        <ul class="dropdown">
+          <li><a href="#">Log Out</a></li>
+          <li><a href="/users/<%= current_user.id %>/edit">Edit Profile</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Feedback</a></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</nav>
