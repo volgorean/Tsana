@@ -1,32 +1,38 @@
-<h1>Log In</h1>
-
-<%= form_tag sessions_path do %>
-  <%= text_field_tag :username, params[:username], placeholder: "username"%>
-  <%= password_field_tag :password, params[:pass], placeholder: "password"%>
-  <%= submit_tag "Log In"%>
-<% end %>
-
-
-<h1>Sign Up</h1>
-
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+<div class="panel welcome-panel">
+  <span class="circle-back"><%= image_tag("space-circle.png") %><span>
+</div>
+<div id="login-modal" class="reveal-modal" data-reveal>
+  <h1>Log In</h1>
+  <%= form_tag sessions_path do %>
+    <%= text_field_tag :username, params[:username], placeholder: "username"%>
+    <%= password_field_tag :password, params[:pass], placeholder: "password"%>
+    <%= submit_tag "Log In"%>
+    <a class="close-reveal-modal">&#215;</a>
   <% end %>
+</div>
 
-    <%= f.text_field :username, placeholder: "username" %>
-    <%= f.text_field :email, placeholder: "email" %>
+<div id="signUp-modal" class="reveal-modal" data-reveal>
+  <h1>Sign Up</h1>
+  <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+      <div class="error_messages">
+        <h2>Form is invalid</h2>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-    <%= f.password_field :password, placeholder: "password" %>
+      <%= f.text_field :username, placeholder: "username" %>
+      <%= f.text_field :email, placeholder: "email" %>
 
-    <%= f.password_field :password_confirmation, placeholder: "confirm password" %>
+      <%= f.password_field :password, placeholder: "password" %>
 
-    <%= f.submit "Sign Up" %>
-<% end %>
+      <%= f.password_field :password_confirmation, placeholder: "confirm password" %>
+
+      <%= f.submit "Sign Up" %>
+      <a class="close-reveal-modal">&#215;</a>
+  <% end %>
+</div>

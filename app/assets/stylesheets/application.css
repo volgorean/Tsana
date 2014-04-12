@@ -40,3 +40,10 @@
   position: relative;
   top: 10px;
 }
+.welcome-panel {
+  background: #2D112C url('welcome-panel-background.png');
+  border: 0;
+  height: 400px;
+}
+.circle-back {
+}
