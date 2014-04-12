@@ -36,6 +36,9 @@
 .currentprojectspanel {
   margin: 10px 0;
 }
+.allprojectspanel {
+  margin: 10px 0;
+}
 .add-proj-button{
   position: relative;
   top: 10px;
